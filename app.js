@@ -6,8 +6,6 @@ var net = require('net');
 var SerialPort = require("serialport").SerialPort;
 var serialPort = new SerialPort("/dev/tty-usbserial1", { baudrate: 9600 });
 
-
-
 net.createServer(function(socket)
 {
     socket.name = socket.remoteAddress + ":" + socket.remotePort;
@@ -16,9 +14,11 @@ net.createServer(function(socket)
     {
         var sSplit = data.toString().split('/');
 
-        console.log(sSplit[0]);
+        var newValue = (sSplit[0]/100)*255;
 
-        serialPort.write(sSplit[0], function(err, results){
+        console.log(newValue);
+
+        serialPort.write(newValue, function(err, results){
             console.log(err);
             console.log(results);
         });
