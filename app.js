@@ -43,6 +43,8 @@ net.createServer(function(socket)
             //rechtdoor
             blaster.setPwm(13,1);
             blaster.setPwm(16,1);
+            blaster.setPwm(15,0);
+            blaster.setPwm(18,0);
         }
         else if(sSplit[0]>10)
         {
@@ -52,6 +54,8 @@ net.createServer(function(socket)
 
             blaster.setPwm(13, calc);
             blaster.setPwm(16,1);
+            blaster.setPwm(15,0);
+            blaster.setPwm(18,0);
         }
         else if(sSplit[0]<-10)
         {
@@ -61,6 +65,8 @@ net.createServer(function(socket)
 
             blaster.setPwm(13,1);
             blaster.setPwm(16,calc);
+            blaster.setPwm(15,0);
+            blaster.setPwm(18,0);
         }
 
 
