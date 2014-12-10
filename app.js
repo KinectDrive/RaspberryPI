@@ -3,18 +3,9 @@
  */
 /**
  * Created by Davy on 26/11/2014.
- *
- * install
- *
- * install this--> https://github.com/sarfata/pi-blaster
- *
- * do this:
- *
- * npm install pi-blaster.js
  */
 
 var net = require('net');
-//var blaster = require('pi-blaster.js');
 
 var SerialPort = require("serialport").SerialPort;
 var serialPort = new SerialPort("/dev/ttyACM0", {
